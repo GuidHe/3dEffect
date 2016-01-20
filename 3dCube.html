@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>3d</title>
+	<style type="text/css">
+		html, body {
+			margin: 0;
+			padding: 0;
+		}
+
+		.container {
+			-webkit-perspective: 550;
+			-webkit-perspective-origin: 50% 50%;
+			-webkit-transform: rotateZ(30deg);
+		}
+		
+		.wrapper {
+			-webkit-transform-style: preserve-3d;
+			-webkit-transform-origin: center center 200px;
+			-webkit-animation: rotate 6s linear infinite;
+		}
+
+		.cube {
+			position: relative;
+			width: 200px;
+			height: 200px;
+			margin: 200px auto;
+			-webkit-transform-style: preserve-3d;
+			-webkit-transform-origin: center center -100px;
+			-webkit-animation: rotate 2s linear infinite;
+		}
+
+		.center {
+			position: absolute;
+			width: 10px;
+			height: 10px;
+			background: red;
+			border-radius: 50%;
+			left: 95px;
+			top: 95px;
+			-webkit-transform: translateZ(-100px);
+		}
+
+		.p {
+			position: absolute;
+			width: 160px;
+			height: 160px;
+			padding: 20px;
+			font-size: 160px;
+			line-height: 160px;
+			text-align: center;
+			color: yellow;
+			font-weight: bold;
+		}
+
+		.p1 {
+			background: rgba(0, 255, 0, 0.4);
+		}
+
+		.p2 {
+			background: rgba(255, 255, 0, 0.4);
+			-webkit-transform-origin: left;
+			-webkit-transform: rotateY(90deg) translateZ(200px);
+		}
+
+		.p3 {
+			background: rgba(0, 255, 255, 0.4);
+			-webkit-transform-origin: right;
+			-webkit-transform: rotateY(-90deg) translateZ(200px);
+		}
+
+		.p4 {
+			background: rgba(255, 0, 255, 0.4);
+			-webkit-transform-origin: top;
+			-webkit-transform: rotateX(-90deg) translateZ(200px);
+		}
+
+		.p5 {
+			background: rgba(0, 0, 255, 0.4);
+			-webkit-transform-origin: bottom;
+			-webkit-transform: rotateX(90deg) translateZ(200px);
+		}
+
+		.p6 {
+			background: rgba(255, 0, 0, 0.4);
+			-webkit-transform-origin: center center;
+			-webkit-transform: rotateY(180deg) translateZ(200px);
+		}
+
+		@-webkit-keyframes rotate {
+			0% {
+				-webkit-transform: rotate3d(0, 1, 0, 0);
+			}
+			50% {
+				-webkit-transform: rotate3d(0, 1, 0, 180deg);
+			}
+			100% {
+				-webkit-transform: rotate3d(0, 1, 0, 360deg);
+			}
+		}
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="wrapper">
+			<div class="cube">
+				<div class="p p1">1</div>
+				<div class="p p2">2</div>
+				<div class="p p3">3</div>
+				<div class="p p4">4</div>
+				<div class="p p5">5</div>
+				<div class="p p6">6</div>
+				<div class="center"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
